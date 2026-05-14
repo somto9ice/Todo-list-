@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Tasks<span>Flow</span></h1>
+        <p>Efficiently Organize your day </p>
+      </header>
+
+      <div class="input-card">
+        <input type="text" id="taskInput" placeholder="What needs to be done?" />
+        
+        <select id="categoryInput">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Study">Study</option>
+          <option value="Other">Other</option>
+        </select>
+        
+        <input type="date" id="dateInput" />
+        
+        <button onclick="addTask()">Add</button>
+      </div>
+
+      <div class="filter-section">
+        <label for="filterSelect">View:</label>
+        <select id="filterSelect" onchange="filterTasks()">
+          <option value="all">All Tasks</option>
+          <option value="today">Due Today</option>
+          <option value="overdue">Overdue</option>
+          <option disabled>--- Categories ---</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Study">Study</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
